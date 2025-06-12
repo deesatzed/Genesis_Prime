@@ -1,0 +1,37 @@
+# Node.js
+gp_b_core/node_modules/
+gp_b_core/.next/
+gp_b_core/out/
+npm-debug.log
+.npm
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+logs/
+gp_b_core/frontend.log
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+EOF < /dev/null

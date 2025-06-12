@@ -1,0 +1,167 @@
+{
+  "config_info": {
+    "name": "Genesis Prime Agent Model Configuration",
+    "version": "1.0",
+    "description": "Model assignments for the 5 specialized Genesis Prime agents",
+    "created": "2025-06-12",
+    "cost_optimization": "Balanced approach with premium models for complex tasks"
+  },
+  "presets": {
+    "budget": {
+      "description": "Cost-optimized configuration using efficient open-source models",
+      "estimated_cost": "$5-15 total",
+      "models": {
+        "E-T": "mistralai/mixtral-8x7b-instruct",
+        "S-A": "mistralai/mixtral-8x7b-instruct", 
+        "M-O": "mistralai/mixtral-8x7b-instruct",
+        "E-S": "mistralai/mixtral-8x7b-instruct",
+        "E-A": "mistralai/mixtral-8x7b-instruct"
+      }
+    },
+    "balanced": {
+      "description": "Balanced performance and cost using GPT-3.5 and Claude Haiku",
+      "estimated_cost": "$15-40 total",
+      "models": {
+        "E-T": "openai/gpt-3.5-turbo",
+        "S-A": "anthropic/claude-3-haiku",
+        "M-O": "anthropic/claude-3-haiku",
+        "E-S": "openai/gpt-3.5-turbo",
+        "E-A": "anthropic/claude-3-haiku"
+      }
+    },
+    "premium": {
+      "description": "High-performance configuration using latest GPT-4 and Claude models",
+      "estimated_cost": "$50-150 total",
+      "models": {
+        "E-T": "openai/gpt-4o",
+        "S-A": "anthropic/claude-3.5-sonnet",
+        "M-O": "anthropic/claude-3.5-sonnet",
+        "E-S": "openai/gpt-4o",
+        "E-A": "anthropic/claude-3.5-sonnet"
+      }
+    },
+    "recommended": {
+      "description": "Optimized configuration matching each agent's specialization",
+      "estimated_cost": "$30-60 total",
+      "models": {
+        "E-T": "openai/gpt-4o",
+        "S-A": "anthropic/claude-3.5-sonnet",
+        "M-O": "anthropic/claude-3.5-sonnet", 
+        "E-S": "mistralai/mixtral-8x7b-instruct",
+        "E-A": "anthropic/claude-3-haiku"
+      }
+    }
+  },
+  "agents": {
+    "E-T": {
+      "name": "Emergence Theorist",
+      "role": "Transdisciplinary Systems Scientist",
+      "specialty": "Complex-systems mathematics, information-integration metrics",
+      "recommended_model": "openai/gpt-4o",
+      "reasoning": "Complex mathematical analysis requires advanced reasoning capabilities",
+      "alternatives": [
+        "anthropic/claude-3.5-sonnet",
+        "openai/gpt-4-turbo",
+        "mistralai/mixtral-8x7b-instruct"
+      ]
+    },
+    "S-A": {
+      "name": "Swarm Architect",
+      "role": "Multi-Agent RL Engineer", 
+      "specialty": "Distributed systems, communication protocols",
+      "recommended_model": "anthropic/claude-3.5-sonnet",
+      "reasoning": "System architecture and protocol design benefit from Claude's structured thinking",
+      "alternatives": [
+        "openai/gpt-4o",
+        "openai/gpt-4-turbo",
+        "anthropic/claude-3-haiku"
+      ]
+    },
+    "M-O": {
+      "name": "Metacognitive Observer",
+      "role": "Cognitive Science Evaluator",
+      "specialty": "Self-reference detection, global awareness",
+      "recommended_model": "anthropic/claude-3.5-sonnet",
+      "reasoning": "Metacognitive analysis requires deep introspective capabilities",
+      "alternatives": [
+        "openai/gpt-4o",
+        "anthropic/claude-3-opus",
+        "openai/gpt-4-turbo"
+      ]
+    },
+    "E-S": {
+      "name": "Empirical Synthesizer", 
+      "role": "Data-Driven Experimentalist",
+      "specialty": "Meta-analysis, reproducible research",
+      "recommended_model": "mistralai/mixtral-8x7b-instruct",
+      "reasoning": "Data analysis and synthesis can be handled efficiently by open-source models",
+      "alternatives": [
+        "openai/gpt-3.5-turbo",
+        "anthropic/claude-3-haiku",
+        "meta-llama/llama-3-70b-instruct"
+      ]
+    },
+    "E-A": {
+      "name": "Ethics & Alignment Analyst",
+      "role": "Multidisciplinary Ethicist",
+      "specialty": "AI safety, normative philosophy", 
+      "recommended_model": "anthropic/claude-3-haiku",
+      "reasoning": "Ethics analysis benefits from Claude's careful reasoning while being cost-effective",
+      "alternatives": [
+        "anthropic/claude-3.5-sonnet",
+        "openai/gpt-3.5-turbo",
+        "openai/gpt-4o"
+      ]
+    }
+  },
+  "model_details": {
+    "openai/gpt-4o": {
+      "provider": "OpenAI",
+      "description": "Latest GPT-4 model with enhanced capabilities",
+      "strengths": ["Complex reasoning", "Mathematical analysis", "Code generation"],
+      "cost_tier": "premium",
+      "context_window": 128000
+    },
+    "anthropic/claude-3.5-sonnet": {
+      "provider": "Anthropic", 
+      "description": "Latest Claude model with excellent reasoning",
+      "strengths": ["Structured thinking", "Analysis", "Safety-conscious"],
+      "cost_tier": "premium",
+      "context_window": 200000
+    },
+    "anthropic/claude-3-haiku": {
+      "provider": "Anthropic",
+      "description": "Fast and efficient Claude model",
+      "strengths": ["Speed", "Cost-effective", "Good reasoning"],
+      "cost_tier": "balanced", 
+      "context_window": 200000
+    },
+    "openai/gpt-3.5-turbo": {
+      "provider": "OpenAI",
+      "description": "Fast and cost-effective GPT model",
+      "strengths": ["Speed", "Cost-effective", "General purpose"],
+      "cost_tier": "budget",
+      "context_window": 16385
+    },
+    "mistralai/mixtral-8x7b-instruct": {
+      "provider": "Mistral AI",
+      "description": "High-performance open-source model",
+      "strengths": ["Cost-effective", "Good performance", "Open source"],
+      "cost_tier": "budget",
+      "context_window": 32768
+    },
+    "meta-llama/llama-3-70b-instruct": {
+      "provider": "Meta",
+      "description": "Meta's latest large language model",
+      "strengths": ["Open source", "Good reasoning", "Cost-effective"],
+      "cost_tier": "budget", 
+      "context_window": 8192
+    }
+  },
+  "usage_instructions": {
+    "onboarding_script": "The onboarding script will read this file and use the 'recommended' preset by default",
+    "custom_configuration": "Edit the 'models' section under any preset to customize",
+    "adding_models": "Add new models to 'model_details' and reference them in agent configurations",
+    "cost_optimization": "Use 'budget' preset for development, 'premium' for production research"
+  }
+}

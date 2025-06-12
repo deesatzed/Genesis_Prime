@@ -1,0 +1,37 @@
+# Genesis Prime IIT Enhanced Consciousness Requirements
+
+# Core dependencies
+numpy>=1.21.0
+psycopg[binary]>=3.0.0
+typing-extensions>=4.0.0
+
+# FastAPI and web framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+
+# Database and caching
+redis>=4.0.0
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+
+# Enhanced async performance
+uvloop>=0.17.0
+
+# Optional production dependencies
+prometheus-client>=0.15.0  # For metrics collection
+python-multipart>=0.0.6   # For form handling
+
+# Development dependencies  
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=22.0.0
+mypy>=0.991
+httpx>=0.25.0  # For testing API endpoints
+
+# Logging and monitoring
+structlog>=23.0.0
+
+# Database
+# PostgreSQL 12+ required
+# Redis 6+ required

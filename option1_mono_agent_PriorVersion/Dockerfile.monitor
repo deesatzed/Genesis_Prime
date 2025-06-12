@@ -1,0 +1,43 @@
+# Genesis Prime Consciousness Monitor Frontend
+FROM node:18-alpine
+
+LABEL maintainer="Genesis Prime Collective Consciousness"
+LABEL description="Next.js frontend for Genesis Prime consciousness monitoring"
+LABEL version="1.0.0"
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Create app directory
+WORKDIR /app
+
+# Copy package files from gp_b_core
+COPY gp_b_core/package*.json ./
+
+# Install all dependencies (including devDependencies for build)
+RUN npm ci --include=dev && npm cache clean --force
+
+# Copy application source 
+COPY gp_b_core/ ./
+
+# Build the Next.js application
+RUN npm run build
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+# Set ownership
+RUN chown -R nextjs:nodejs /app
+USER nextjs
+
+# Expose port
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3000/api/health || exit 1
+
+# Start the application
+CMD ["npm", "start"]

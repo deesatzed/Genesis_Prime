@@ -1,0 +1,7 @@
+{
+  "E-T": "openai/gpt-4o",
+  "S-A": "anthropic/claude-3.5-sonnet",
+  "M-O": "anthropic/claude-3.5-sonnet",
+  "E-S": "openai/gpt-4o",
+  "E-A": "anthropic/claude-3.5-sonnet"
+}

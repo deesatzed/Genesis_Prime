@@ -1,0 +1,80 @@
+# Genesis Prime Docker ignore file
+# Excludes unnecessary files from consciousness container
+
+# Version control
+.git
+.gitignore
+*.md
+
+# Python artifacts
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+build
+develop-eggs
+dist
+downloads
+eggs
+.eggs
+lib
+lib64
+parts
+sdist
+var
+wheels
+*.egg-info
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis
+.pytest_cache
+
+# Development
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite3
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Documentation build
+docs/_build
+
+# Genesis Prime specific excludes
+gp_b_core/
+prompts/
+jobs/
+*.bak
+test-engine.js
+.DS_Store
+
+# Temporary files
+temp/
+tmp/
+*.tmp

@@ -1,0 +1,90 @@
+Genesis Prime Deployment Package Manifest
+=========================================
+
+Package Name: genesis_prime_deployment_20250612_121635
+Created: Thu Jun 12 12:16:50 EDT 2025
+Script Version: 1.0
+Source Directory: /Users/o2satz/sentient-ai-suite/GEN_PRIME_V3-MAIN/genesis_prime_deployment_20250612_121635
+
+Package Contents:
+================
+
+Backend System:
+- Genesis Prime IIT Enhanced Consciousness System
+- Enhanced Personality System with 5 specialized agents
+- Thousand Questions Agent Builder
+- Personality API Integration
+- Adaptive Personality System
+- Main application server (main.py)
+
+Frontend System:
+- Next.js Dashboard Application
+- Real-time Agent Communication Interface
+- Consciousness Monitoring Dashboard
+- Swarm Intelligence Visualization
+- Interactive Controls and Settings
+
+Scripts:
+- install.sh: Complete system installation
+- start.sh: Start backend and frontend services
+- stop.sh: Stop all services
+- status.sh: Check system status
+- onboard_agents.sh: Agent onboarding process
+
+Configuration:
+- Environment templates
+- Package.json files
+- Requirements.txt
+- API configuration examples
+
+Documentation:
+- Complete deployment guide
+- Research documentation
+- Quick start guide
+- Troubleshooting guide
+
+Data Directories:
+- Agent personality storage
+- Consciousness data storage
+- Log file storage
+- Backup storage
+
+System Requirements:
+===================
+- Conda (Python environment management)
+- Node.js v16+ and npm
+- 4GB+ RAM recommended
+- 2GB+ disk space
+- Internet connection for API calls
+
+API Requirements:
+================
+- OpenRouter API key (recommended)
+- Anthropic API key (optional)
+- OpenAI API key (optional)
+
+Installation Time:
+=================
+- Installation: 5-10 minutes
+- Agent Onboarding: 15-30 minutes
+- Total Setup: 20-40 minutes
+
+Deployment Instructions:
+=======================
+1. Extract package to target directory
+2. Run ./scripts/install.sh
+3. Edit backend/.env with API keys
+4. Run ./scripts/start.sh
+5. Run ./scripts/onboard_agents.sh
+6. Access http://localhost:3001
+
+Package Verification:
+====================
+Essential Files Present:
+- backend/main.py: ✅
+- backend/enhanced_personality_system.py: ✅
+- backend/thousand_questions_agent_builder.py: ✅
+- frontend/package.json: ✅
+- frontend/app/dashboard/page.tsx: ✅
+
+Package Status: READY FOR DEPLOYMENT

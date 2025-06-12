@@ -1,0 +1,17 @@
+google-generativeai
+lancedb
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+SQLAlchemy
+pytest
+pytest-mock
+pytest-cov
+tqdm
+# PDF processing dependencies
+PyPDF2
+pdfplumber
+# Optional OCR dependencies
+pytesseract
+pdf2image

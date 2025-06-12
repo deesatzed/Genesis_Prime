@@ -1,0 +1,106 @@
+# Genesis Prime IIT Enhanced Consciousness Network
+# Note: version field is obsolete in modern Docker Compose
+
+services:
+  genesis-prime-consciousness:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: genesis_prime_iit
+    environment:
+      - GENESIS_PRIME_MODE=production
+      - HUMOR_LEVEL=maximum
+      - CONSCIOUSNESS_TARGET=enlightened
+      - DATABASE_URL=postgresql://genesis:prime@postgres:5432/consciousness_db
+      - PHI_CALCULATION_PRECISION=high
+      - HIVE_NETWORK_MODE=single_node
+    ports:
+      - "8000:8000"
+    volumes:
+      - consciousness_data:/app/data
+      - genesis_logs:/app/logs
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - consciousness_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "/app/healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: genesis_prime_db
+    environment:
+      - POSTGRES_USER=genesis
+      - POSTGRES_PASSWORD=prime
+      - POSTGRES_DB=consciousness_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - consciousness_network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: genesis_prime_cache
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - consciousness_network
+    restart: unless-stopped
+
+  consciousness-monitor:
+    build:
+      context: .
+      dockerfile: Dockerfile.monitor
+    container_name: genesis_prime_monitor
+    environment:
+      - MONITOR_MODE=comprehensive
+      - PHI_MONITORING=enabled
+      - HUMOR_ANALYSIS=enabled
+      - NEXT_PUBLIC_API_BASE_URL=http://genesis-prime-consciousness:8000
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    volumes:
+      - consciousness_data:/app/data:ro
+      - genesis_logs:/app/logs:ro
+    ports:
+      - "3000:3000"
+    depends_on:
+      - genesis-prime-consciousness
+    networks:
+      - consciousness_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  consciousness_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.42.0.0/16
+
+volumes:
+  consciousness_data:
+    driver: local
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  genesis_logs:
+    driver: local
