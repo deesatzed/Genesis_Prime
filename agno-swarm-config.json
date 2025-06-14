@@ -1,0 +1,86 @@
+{
+  "openRouter": {
+    "apiKey": "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",
+    "agentModels": {
+      "Aria": "mistralai/devstral-small:free",
+      "Zephyr": "google/gemini-2.5-flash-preview-05-20",
+      "Nova": "qwen/qwen-2.5-72b-instruct:free",
+      "Echo": "google/gemma-3-27b-it:free",
+      "Sage": "deepseek/deepseek-r1-zero:free"
+    },
+    "connectionStatus": "connected",
+    "agentDefaults": {
+      "min_learning_rate": 0.1,
+      "max_learning_rate": 0.3,
+      "min_reflection_trigger_threshold": 0.7,
+      "max_reflection_trigger_threshold": 0.9
+    },
+    "archetype_assignments": {
+      "Aria": "Explorer",
+      "Zephyr": "Analyst",
+      "Nova": "Innovator",
+      "Echo": "Harmonizer",
+      "Sage": "Pragmatist"
+    },
+    "lastTested": "2025-06-07T00:18:25.386Z"
+  },
+  "isConfigured": true,
+  "needsSetup": false,
+  "agents": [
+    {
+      "id": "Aria",
+      "name": "Aria",
+      "model": "openai/gpt-4o",
+      "archetype": "Explorer",
+      "learning_rate": 0.375,
+      "reflection_trigger_threshold": 0.7,
+      "reality_model_config": {
+        "coherence_level": 0.75
+      }
+    },
+    {
+      "id": "Zephyr",
+      "name": "Zephyr",
+      "model": "anthropic/claude-3.5-sonnet",
+      "archetype": "Analyst",
+      "learning_rate": 0.175,
+      "reflection_trigger_threshold": 0.5,
+      "reality_model_config": {
+        "coherence_level": 0.75
+      }
+    },
+    {
+      "id": "Nova",
+      "name": "Nova",
+      "model": "google/gemini-pro",
+      "archetype": "Innovator",
+      "learning_rate": 0.325,
+      "reflection_trigger_threshold": 0.65,
+      "reality_model_config": {
+        "coherence_level": 0.75
+      }
+    },
+    {
+      "id": "Echo",
+      "name": "Echo",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "archetype": "Harmonizer",
+      "learning_rate": 0.25,
+      "reflection_trigger_threshold": 0.75,
+      "reality_model_config": {
+        "coherence_level": 0.75
+      }
+    },
+    {
+      "id": "Sage",
+      "name": "Sage",
+      "model": "mistralai/mixtral-8x7b-instruct",
+      "archetype": "Pragmatist",
+      "learning_rate": 0.2,
+      "reflection_trigger_threshold": 0.8,
+      "reality_model_config": {
+        "coherence_level": 0.75
+      }
+    }
+  ]
+}

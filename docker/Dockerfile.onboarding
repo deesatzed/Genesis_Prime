@@ -1,0 +1,45 @@
+# Genesis Prime Agent Onboarding Dockerfile
+FROM python:3.13-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create necessary directories
+RUN mkdir -p /app/data /app/logs /app/agent_profiles
+
+# Copy backend requirements first for better caching
+COPY apps/option1_mono_agent/requirements.txt /app/requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy backend source code (needed for onboarding scripts)
+COPY apps/option1_mono_agent/ /app/
+
+# Copy shared libraries if they exist
+COPY libs/ /app/libs/
+
+# Copy configuration files
+COPY agent_model*.json /app/
+COPY *.json /app/
+
+# Copy onboarding scripts
+COPY scripts/ /app/scripts/
+
+# Set Python path
+ENV PYTHONPATH=/app
+
+# Create a non-root user for security
+RUN useradd -m -u 1000 genesis && \
+    chown -R genesis:genesis /app
+USER genesis
+
+# Default command runs the onboarding process
+CMD ["python", "/app/scripts/docker_onboard_agents.py"]

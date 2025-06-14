@@ -1,0 +1,7 @@
+{
+  "E-T": "mistralai/devstral-small:free",
+  "S-A": "microsoft/phi-4-reasoning-plus:free",
+  "M-O": "microsoft/mai-ds-r1:free",
+  "E-S": "google/gemma-3-27b-it:free",
+  "E-A": "deepseek/deepseek-r1-zero:free"
+}
